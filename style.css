@@ -1,0 +1,91 @@
+/* 全局样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* 标题 */
+h1, h2 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+/* 容器 */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 表单样式 */
+form {
+  margin-top: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* 按钮 */
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* 登录状态显示 */
+#user-info {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* 上传区 */
+#upload-section {
+  margin-top: 30px;
+}
+
+/* 内容编辑区 */
+.edit-box {
+  background: #f1f1f1;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
