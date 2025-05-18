@@ -4,7 +4,62 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shenglei Sun 的个人博客</title>
-  <link rel="stylesheet" href="style.css" />
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #f1f1f1;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    header, footer {
+      background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+      text-align: center;
+      padding: 2rem 1rem;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+
+    h1, h2 {
+      color: #00ffe7;
+    }
+
+    a {
+      color: #00d9ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #00ffe7;
+      text-shadow: 0 0 8px #00ffe7;
+    }
+
+    .card {
+      background-color: #1c1c1e;
+      border: 1px solid #00ffe7;
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      box-shadow: 0 0 10px #00ffe7;
+    }
+
+    footer {
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+
+    .fade-in {
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
   <header class="fade-in">
@@ -12,12 +67,50 @@
     <p>欢迎来到我的博客世界</p>
   </header>
 
-  <main class="fade-in">
+  <main class="container fade-in">
+    <!-- 博客 -->
     <section class="card">
       <h2>📚 最新博客</h2>
-      <ul>
-        <li><a href="posts/post1.html">✨ 学习 Git 和 GitHub</a></li>
-        <li><a href="posts/post2.html">🧠 网站搭建全过程记录</a></li>
+      <ul class="list-unstyled mt-3">
+        <li class="mb-2"><a href="posts/post1.html">✨ 学习 Git 和 GitHub</a></li>
+        <li class="mb-2"><a href="posts/post2.html">🧠 网站搭建全过程记录</a></li>
+      </ul>
+    </section>
+
+    <!-- 项目 -->
+    <section class="card">
+      <h2>🚀 项目</h2>
+      <ul class="list-unstyled mt-3">
+        <li class="mb-2"><a href="project/project1.html">AI 智能问答系统 - 使用 LLM 构建企业知识库</a></li>
+        <li class="mb-2"><a href="project/project2.html">个人网站搭建 - GitHub Pages + Firebase + Markdown 编辑器</a></li>
+        <li class="mb-2"><a href="project/project3.html">自动化爬虫平台 - BeautifulSoup + MySQL + Flask 展示</a></li>
+      </ul>
+    </section>
+
+    <!-- 论文 -->
+    <section class="card">
+      <h2>📄 论文</h2>
+      <ul class="list-unstyled mt-3">
+        <li class="mb-2"><a href="paper/my-paper/my-paper1.html">Sun S., Zhang Y. 等. 基于混合注意力机制的文本分类模型. *计算机学报*, 2024.</a></li>
+        <li class="mb-2"><a href="paper/readed-paper/paper1.html">Sun S. 面向多模态对话的语言理解方法研究. *人工智能前沿*, 2023.</a></li>
+      </ul>
+    </section>
+
+    <!-- 专利 -->
+    <section class="card">
+      <h2>🔬 专利</h2>
+      <ul class="list-unstyled mt-3">
+        <li class="mb-2"><a href="patent/patent1.html">一种基于图神经网络的数据聚合方法（申请号：CN202410123456）</a></li>
+      </ul>
+    </section>
+
+    <!-- 个人经历 -->
+    <section class="card">
+      <h2>👤 个人经历</h2>
+      <ul class="list-unstyled mt-3">
+        <li class="mb-2"><a href="personal_experience/1.html">清华大学 | 计算机科学与技术 | 硕士（2022 - 2025）</a></li>
+        <li class="mb-2"><a href="personal_experience/2.html">百度实习 | NLP 组 | 实习研究员（2024 年暑期）</a></li>
+        <li class="mb-2"><a href="personal_experience/3.html">华为云杯 · 大学生 AI 挑战赛全国二等奖</a></li>
       </ul>
     </section>
   </main>
@@ -25,5 +118,7 @@
   <footer class="fade-in">
     <p>&copy; 2025 Shenglei Sun · 用 ❤️ 书写生活</p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
