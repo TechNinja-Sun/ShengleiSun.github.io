@@ -1,124 +1,220 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shenglei Sun 的个人博客</title>
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <!-- Custom CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>孙圣雷的个人主页</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     body {
-      background-color: #0f0f0f;
-      color: #f1f1f1;
-      font-family: 'Orbitron', sans-serif;
+      background: #fff;
+      color: #111;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-
-    header, footer {
-      background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
-      text-align: center;
-      padding: 2rem 1rem;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-    }
-
-    h1, h2 {
-      color: #00ffe7;
-    }
-
     a {
-      color: #00d9ff;
+      color: #222;
       text-decoration: none;
+      transition: color 0.25s ease, text-decoration 0.25s ease;
     }
-
-    a:hover {
-      color: #00ffe7;
-      text-shadow: 0 0 8px #00ffe7;
+    a:hover, a:focus {
+      color: #555;
+      text-decoration: underline;
     }
-
-    .card {
-      background-color: #1c1c1e;
-      border: 1px solid #00ffe7;
-      border-radius: 15px;
-      padding: 1.5rem;
-      margin-top: 2rem;
-      box-shadow: 0 0 10px #00ffe7;
+    header, footer {
+      background: #fff;
     }
-
+    nav.navbar {
+      background-color: #000;
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.3);
+      z-index: 1050;
+    }
+    nav.navbar .navbar-brand,
+    nav.navbar .nav-link,
+    nav.navbar button.btn-outline-light {
+      color: #fff;
+      transition: color 0.3s ease;
+      font-weight: 500;
+    }
+    nav.navbar .navbar-brand:hover,
+    nav.navbar .nav-link:hover,
+    nav.navbar button.btn-outline-light:hover {
+      color: #bbb;
+    }
+    section > h2 {
+      border-bottom: 3px solid #000;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+    section {
+      padding-bottom: 2rem;
+    }
+    ul, ol {
+      padding-left: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    ul li, ol li {
+      margin-bottom: 0.5rem;
+    }
+    button.btn-outline-light {
+      border-color: #fff;
+      font-weight: 600;
+    }
+    header h1 {
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      color: #000;
+    }
+    header p.lead {
+      color: #666;
+      font-weight: 500;
+      margin-top: 0.2rem;
+    }
     footer {
       font-size: 0.9rem;
+      color: #777;
       margin-top: 3rem;
     }
-
-    .fade-in {
-      animation: fadeIn 1.5s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    @media (max-width: 575.98px) {
+      header h1.display-5 {
+        font-size: 1.6rem;
+      }
+      header p.lead {
+        font-size: 0.85rem;
+      }
+      nav.navbar .nav-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="fade-in">
-    <h1>🌟 Shenglei Sun</h1>
-    <p>欢迎来到我的博客世界</p>
-  </header>
+  <nav class="navbar navbar-expand-lg sticky-top shadow">
+    <div class="container">
+      <a class="navbar-brand" href="#">主页</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="切换导航">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#research">科研项目</a></li>
+          <li class="nav-item"><a class="nav-link" href="#awards">竞赛获奖</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">专业技能</a></li>
+          <li class="nav-item"><a class="nav-link" href="#volunteer">志愿服务</a></li>
+          <li class="nav-item"><a class="nav-link" href="#learning">学习记录</a></li>
+        </ul>
+        <button class="btn btn-outline-light" type="button" onclick="confirmEmail()">📧 一键发送邮件</button>
+      </div>
+    </div>
+  </nav>
 
-  <main class="container fade-in">
-    <!-- 博客 -->
-    <section class="card">
-      <h2>📚 最新博客</h2>
-      <ul class="list-unstyled mt-3">
-        <li class="mb-2"><a href="posts/post1.html">✨ 学习 Git 和 GitHub</a></li>
-        <li class="mb-2"><a href="posts/post2.html">🧠 网站搭建全过程记录</a></li>
+  <main class="container my-4">
+
+    <section id="profile">
+      <h2>基本信息</h2>
+      <ul class="list-unstyled">
+        <li><strong>姓名：</strong>孙圣雷</li>
+        <li><strong>性别：</strong>男</li>
+        <li><strong>出生年月：</strong>2004年06月</li>
+        <li><strong>学校：</strong>上海电力大学</li>
+        <li><strong>学院：</strong>计算机学院</li>
+        <li><strong>专业：</strong>计算机科学与技术</li>
+        <li><strong>学历：</strong>本科</li>
+        <li><strong>联系电话：</strong>13639330619</li>
+        <li><strong>电子邮箱：</strong>ray_ssl@163.com</li>
       </ul>
     </section>
 
-    <!-- 项目 -->
-    <section class="card">
-      <h2>🚀 项目</h2>
-      <ul class="list-unstyled mt-3">
-        <li class="mb-2"><a href="project/project1.html">AI 智能问答系统 - 使用 LLM 构建企业知识库</a></li>
-        <li class="mb-2"><a href="project/project2.html">个人网站搭建 - GitHub Pages + Firebase + Markdown 编辑器</a></li>
-        <li class="mb-2"><a href="project/project3.html">自动化爬虫平台 - BeautifulSoup + MySQL + Flask 展示</a></li>
+    <section id="research">
+      <h2>科研成果与创新实践</h2>
+      <ol>
+        <li><a href="project1.html">第一作者论文《EagleEye: An Efficient Flaws Detection Model For Offshore Wind Turbine Blade》，发表于 The 8th Asian Conference on Artificial Intelligence Technology (ACAIT 2024)，并参加会议进行海报展示与讲解。</a></li>
+        <li><a href="project2.html">作为发明人，申请新型发明专利《一种高效的海上风机叶片多目标缺陷检测方法》。</a></li>
+        <li><a href="project3.html">作为核心开发人员，参与开发“海上风机叶片缺陷协同识别系统”，系统通过安全检测并成功部署于上海能源科技发展有限公司实际项目中。</a></li>
+        <li><a href="project4.html">市级负责人项目：“新能源汽车智能充电桩系统”</a></li>
+        <li><a href="project5.html">国家级项目开发人员：“智能直流充电桩系统”</a></li>
+        <li><a href="project6.html">市级负责人项目：“基于RWKV模型的导游机器人”</a></li>
+        <li><a href="project7.html">市级项目开发人员：“电力智能巡检机器小车”</a></li>
+        <li><a href="project8.html">SRTP项目负责人：“面向用电企业能源报告生成的电力垂直大模型研究与应用”</a></li>
+      </ol>
+    </section>
+
+    <section id="awards">
+      <h2>竞赛与奖项</h2>
+      <p><strong>中国国际大学生创新大赛（2024）</strong></p>
+      <ul>
+        <li>校赛一等奖：《储然有序——中国储能安全守护者》</li>
+        <li>上海市赛银奖：《储然有序——中国储能安全守护者》</li>
+        <li>校赛负责人项目：“高校新能源汽车智能充电桩系统”</li>
+        <li>校赛开发人员项目：“灾场智行者”智能抢险机器人</li>
+        <li>省赛开发人员项目：“储然有序”中国储能安全的守护者</li>
+      </ul>
+      <p><strong>中国高校计算机大赛 – 团体程序设计天梯赛（2024）</strong></p>
+      <ul>
+        <li>三等奖（分站赛）</li>
+        <li>全国总决赛参与奖</li>
+      </ul>
+      <p><strong>其他参赛经历</strong></p>
+      <ul>
+        <li>“传智杯”全国大学生IT技能大赛——程序设计挑战赛道</li>
+        <li>第六届“华教杯”全国大学生数学竞赛</li>
       </ul>
     </section>
 
-    <!-- 论文 -->
-    <section class="card">
-      <h2>📄 论文</h2>
-      <ul class="list-unstyled mt-3">
-        <li class="mb-2"><a href="paper/my-paper/my-paper1.html">Sun S., Zhang Y. 等. 基于混合注意力机制的文本分类模型. *计算机学报*, 2024.</a></li>
-        <li class="mb-2"><a href="paper/readed-paper/paper1.html">Sun S. 面向多模态对话的语言理解方法研究. *人工智能前沿*, 2023.</a></li>
+    <section id="skills">
+      <h2>专业能力与技术认证</h2>
+      <ul>
+        <li>具备扎实的软件开发与系统部署能力，熟悉人工智能模型与图像识别应用。</li>
+        <li>通过考核，成为上海电力大学计算机学院机器人实验室成员。</li>
+        <li>获得RPA初级开发工程师认证。</li>
+        <li>参与华为开发者联盟学堂系列课程学习（HarmonyOS方向）。</li>
+        <li>参加“人工智能现代产业学院师生赴华为昇腾生态创新中心交流”活动。</li>
       </ul>
     </section>
 
-    <!-- 专利 -->
-    <section class="card">
-      <h2>🔬 专利</h2>
-      <ul class="list-unstyled mt-3">
-        <li class="mb-2"><a href="patent/patent1.html">一种基于图神经网络的数据聚合方法（申请号：CN202410123456）</a></li>
+    <section id="volunteer">
+      <h2>志愿服务与文体活动</h2>
+      <p><strong>志愿服务</strong></p>
+      <ul>
+        <li>“衣物温暖·让爱传递”旧衣物回收志愿活动</li>
+        <li>新春年味艺术视频志愿参与</li>
+        <li>团学办公室工作：担任二级学院分团委干事</li>
+      </ul>
+      <p><strong>校园活动</strong></p>
+      <ul>
+        <li>参与“蓝海·逐梦”大学生训练营启动仪式及开场舞表演</li>
+        <li>学校文艺展演演职人员</li>
       </ul>
     </section>
 
-    <!-- 个人经历 -->
-    <section class="card">
-      <h2>👤 个人经历</h2>
-      <ul class="list-unstyled mt-3">
-        <li class="mb-2"><a href="personal_experience/1.html">清华大学 | 计算机科学与技术 | 硕士（2022 - 2025）</a></li>
-        <li class="mb-2"><a href="personal_experience/2.html">百度实习 | NLP 组 | 实习研究员（2024 年暑期）</a></li>
-        <li class="mb-2"><a href="personal_experience/3.html">华为云杯 · 大学生 AI 挑战赛全国二等奖</a></li>
+    <section id="learning">
+      <h2>学习记录</h2>
+      <ul>
+        <li>完成华为开发者联盟学堂系列课程（HarmonyOS方向）</li>
+        <li>参与“人工智能现代产业学院师生赴华为昇腾生态创新中心交流”活动</li>
+        <li>多次自主学习AI模型与图像识别技术的前沿发展</li>
       </ul>
     </section>
+
   </main>
 
-  <footer class="fade-in">
-    <p>&copy; 2025 Shenglei Sun · 用 ❤️ 书写生活</p>
+  <footer class="text-center py-3 border-top">
+    © 2025 孙圣雷 · 版权所有
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function confirmEmail() {
+      if (confirm("是否要发送邮件至 ray_ssl@163.com？")) {
+        window.location.href = "mailto:ray_ssl@163.com";
+      }
+    }
+  </script>
 </body>
 </html>
